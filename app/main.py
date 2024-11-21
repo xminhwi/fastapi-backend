@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import create_engine, Column, Interger, String, Boolean
 from sqlalchemy.ext.declarative import declarative_base
