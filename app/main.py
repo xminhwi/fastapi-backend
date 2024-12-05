@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from pydantic import BaseModel
-from sqlalchemy import create_engine, Column, Integer, String, Boolean
+from sqlalchemy import create_engine, Column, Integer, String, Boolean, Date
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 
@@ -17,6 +17,7 @@ class Todo(Base):
     title = Column(String, nullable=False)
     description = Column(String, nullable=True)
     completed = Column(Boolean, default=False)
+    due_date = Column(Date, nullable=True)
 
 Base.metadata.create_all(bind=engine)
 
